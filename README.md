@@ -295,6 +295,15 @@ app.model({
 `done()` is passed as the final argument so if an error occurs in a subscriber,
 it can be communicated to the `onError` hook.
 
+### store.stop()
+
+After an app is "stopped" all subsequent `send()` calls become no-ops.
+
+```js
+store.stop()
+send('trimBeard') // -> does not call a reducer/effect
+```
+
 ## FAQ
 ### What is an "action dispatcher"?
 An action dispatcher gets data from one place to another without tightly
