@@ -224,7 +224,7 @@ tape('api: stop()', (t) => {
   t.test('should stop executing send() calls', (t) => {
     t.plan(1)
     const store = barracks()
-    let count = 0
+    var count = 0
     store.model({ reducers: { foo: (state, action) => { count += 1 } } })
     const createSend = store.start()
     const send = createSend('test', true)
